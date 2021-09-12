@@ -19,8 +19,8 @@ class HomeWorkApp {
         System.out.println("Apple");
     }
 
-    static void checkSumSign(int c, int d) {
-        System.out.println((c + d) >= 0? "Сумма положительная" : "Сумма отрицательная");
+    static void checkSumSign(int a, int b) {
+        System.out.println((a + b) >= 0? "Сумма положительная" : "Сумма отрицательная");
     }
 
     static void printColor(int value) {
