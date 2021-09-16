@@ -49,9 +49,7 @@ class HomeWorkLesson2 {
     }
 
     static boolean intercalaryYear(int a) {
-        if (a <= 0) {
-            return false;
-        } else if (a % 400 == 0) {
+        if (a % 400 == 0) {
             return true;
         } else {
             return a % 100 == 0 ? false : a % 4 == 0;
