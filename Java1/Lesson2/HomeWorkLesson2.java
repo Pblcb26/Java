@@ -28,7 +28,8 @@ class HomeWorkLesson2 {
         System.out.println(intercalaryYear(1600));
         System.out.println(intercalaryYear(2100));
     }
-
+    
+    /*Избыточные () ? true/false см isNegative*/
     static boolean between10And20(int a, int b) {
         int c = a + b;
         return (c >= 10 && c <= 20) ? true : false;
@@ -38,8 +39,9 @@ class HomeWorkLesson2 {
         System.out.println(a >= 0 ? a + " число положительное" : a + " число отрицательное");
     }
 
+    /*Достаточно так*/
     static boolean isNegative(int a) {
-        return (a < 0) ? true : false;
+        return a < 0;
     }
 
     static void printWord(String word, int count) {
