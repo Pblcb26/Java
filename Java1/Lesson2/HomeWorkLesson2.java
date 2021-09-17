@@ -11,22 +11,32 @@ class HomeWorkLesson2 {
         System.out.println(between10And20(5, 10));
         System.out.println(between10And20(15, 5));
         System.out.println(between10And20(15, 10));
+
         checkSign(-4);
         checkSign(0);
         checkSign(4);
+
         System.out.println(isNegative(-56));
         System.out.println(isNegative(0));
         System.out.println(isNegative(56));
+
         printWord("Бе-бе-бе!", 0);
         printWord("Бе-бе-бе!", 1);
         printWord("", 1);
         printWord("", 0);
         printWord("Бе-бе-бе!", 2);
+
         System.out.println(intercalaryYear(-1200));
         System.out.println(intercalaryYear(0));
         System.out.println(intercalaryYear(1984));
         System.out.println(intercalaryYear(1600));
         System.out.println(intercalaryYear(2100));
+
+        System.out.println(intercalaryYear2(-1200));
+        System.out.println(intercalaryYear2(0));
+        System.out.println(intercalaryYear2(1984));
+        System.out.println(intercalaryYear2(1600));
+        System.out.println(intercalaryYear2(2100));
     }
     
     /*Избыточные () ? true/false см isNegative*/
@@ -56,5 +66,10 @@ class HomeWorkLesson2 {
         } else {
             return a % 100 == 0 ? false : a % 4 == 0;
         }
+    }
+
+    /*В одну строку*/
+    static boolean intercalaryYear2(int a) {
+        return (a % 4 == 0 && a % 100 != 0) || a % 400 == 0;
     }
 }
