@@ -42,10 +42,26 @@ class HomeWorkLesson3 {
         displacement(arr6, 6);
     }
 
+    /*Разбор ДЗ
+    Автозаполнение массива
+    static int[] createAndFillArray(int lenght, boolean rnd, int value) {
+        int arr = new int[lenght];
+        for (int i = 0; i < arr.length; i++) {
+            if (rnd) {
+                arr[i] = random.nextInt(value);
+            } else {
+                arr[i] = i + value;
+            }
+        }
+        return arr;
+    }*/
+
     static void invArr() {
         int[] arr = {0, 1, 1, 0, 0, 1, 0, 0};
         System.out.println(Arrays.toString(arr));//Для сравнения с результатом
         for (int i = 0; i < arr.length; i++) {
+            /*Разбор ДЗ
+             arr[i] = 1 - arr[i];*/
             if (arr[i] == 0) {
                 arr[i] = 1;
             } else {
@@ -67,7 +83,9 @@ class HomeWorkLesson3 {
         int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         System.out.println(Arrays.toString(arr));//Для сравнения с результатом
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < 6) arr[i] = arr[i] * 2;
+            if (arr[i] < 6) {
+                arr[i] = arr[i] * 2; //arr[i] *= 2;
+            }
         }
         System.out.println(Arrays.toString(arr));
     }
@@ -76,11 +94,22 @@ class HomeWorkLesson3 {
         int[] [] arr = new int[a] [a];
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
-                if (i == j || j == arr.length - 1 - i) arr[i] [j] = 1;
+                if (i == j || j == arr.length - 1 - i) {
+                    arr[i] [j] = 1;
+                }
                 System.out.print(arr[i] [j] + " ");
             }
             System.out.println();
         }
+        /* Разбор ДЗ
+        int[] [] arr = new int[a] [a];
+        for (int i = 0; i < arr.length; i++) {
+            arr [i][i] = 1;
+            arr[i][arr.length - 1 - i] = 1;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(Arrays.toString(arr));
+        } */
     }
 
     static void argArray(int len, int initialValue) {
@@ -89,6 +118,10 @@ class HomeWorkLesson3 {
             arr[i] = initialValue;
         }
         System.out.println(Arrays.toString(arr));
+        /*Разбор ДЗ
+        int[] arr = new int[len];
+        Arrays.fill(arr, initialValue);
+        return arr;*/
     }
 
     static void minMax(int len) {
@@ -104,6 +137,20 @@ class HomeWorkLesson3 {
         int max = arr[len - 1];
         System.out.println("Min - " + min + ", Max - " + max);
     }
+    /*Разбор ДЗ
+    static int[] findMinMax(int[] array)
+        int [minMax] = new int[2];
+        minMax[0] = minMax[1] = array;
+        for (int i = 0; i < arr.length; i++) {
+            if (minMax[0] > array[i]) {
+                minMax[0] = array[i];
+            }
+            if (minMax[i] < array[i]) {
+                minMax[i] = array[i];
+            }
+            return minMax;
+        }
+        */
 
     static boolean checkBalance(int[] arr) {
         int lSumm = 0;
@@ -114,7 +161,9 @@ class HomeWorkLesson3 {
             for (int j = i + 1; j < arr.length; j++) {
                 rSumm += arr[j];
             }
-            if (lSumm == rSumm) return true;
+            if (lSumm == rSumm) {
+                return true;
+            }
         }
         return false;
     }
@@ -124,11 +173,15 @@ class HomeWorkLesson3 {
         for (int i = 0; i < arr.length; i++) {
             arrSumm += arr[i];
         }
-        if (arrSumm % 2 != 0) return false; //Только для цельночисленного массива
+        if (arrSumm % 2 != 0) {
+            return false; //Только для цельночисленного массива
+        }
         int curSumm = 0;
         for (int i = 0; i < arr.length; i++) {
             curSumm += arr[i];
-            if (curSumm == arrSumm / 2) return true;
+            if (curSumm == arrSumm / 2) {
+                return true;
+            }
         }
         return false;
     }
@@ -142,7 +195,9 @@ class HomeWorkLesson3 {
         int curSumm = 0;
         for (int i = 0; i < arr.length; i++) {
             curSumm += arr[i];
-            if (arrSumm - curSumm == curSumm) return true;
+            if (arrSumm - curSumm == curSumm) {
+                return true;
+            }
         }
         return false;
     }
