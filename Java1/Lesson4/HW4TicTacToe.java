@@ -117,12 +117,8 @@ class HW4TicTacToe {
         int diag = 0, diagRev = 0;
         //Проверка диагоналей.
         for (int i = 0; i < fieldLenght; i++) {
-            if (table[i][i] == ch) {
-                diag = diag + 1;
-            }
-            if ( table[i][fieldLenght - 1 - i] == ch) {
-                diagRev = diagRev + 1;
-            }
+            diag += table[i][i] == ch? 1 : 0;
+            diagRev += table[i][fieldLenght - 1 - i] == ch? 1 : 0;
         }
         if (diag == signForWin || diagRev == signForWin) {
             return true;
@@ -131,12 +127,8 @@ class HW4TicTacToe {
         for (int i = 0; i < fieldLenght; i++) {
             int y = 0, x = 0;
             for (int j = 0; j < fieldLenght; j++) {
-                if (table[i][j] == ch) {
-                    y = y + 1;
-                }
-                if (table[j][i] == ch) {
-                    x = x + 1;
-                }
+                y += table[i][j] == ch? 1 : 0;
+                x += table[j][i] == ch? 1 : 0;
             }
             if (y == signForWin || x == signForWin) {
                 return true;
