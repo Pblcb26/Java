@@ -13,6 +13,8 @@ class HW4TicTacToe {
     char[][] table;
     Random random;
     Scanner scanner;
+    int fieldLenght = 5;
+    int signForWin = 4;
 
     public static void main(String[] args) {
         new HW4TicTacToe() .game();
@@ -21,7 +23,7 @@ class HW4TicTacToe {
     HW4TicTacToe() {
         random = new Random();
         scanner = new Scanner(System.in);
-        table = new char[3][3];
+        table = new char[fieldLenght][fieldLenght];
         System.out.println("Game init...");
     }
 
@@ -57,16 +59,16 @@ class HW4TicTacToe {
 
     //Дополнительные методы
     void initTable() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < fieldLenght; i++) {
+            for (int j = 0; j < fieldLenght; j++) {
                 table[i][j] = SIGN_EMPTY;
             }
         }
     }
 
     void printTable() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < fieldLenght; i++) {
+            for (int j = 0; j < fieldLenght; j++) {
                 System.out.print(table[i][j] + " ");
             }
             System.out.println();
@@ -76,7 +78,7 @@ class HW4TicTacToe {
     void turnHuman() {
         int x, y;
         do {
-            System.out.println("Enter X Y {1...3}");
+            System.out.println(signForWin + " signs in line for win\n Enter X Y {1...5}");
             x = scanner.nextInt() - 1;
             y = scanner.nextInt() - 1;
         } while(!isCellValid(x, y));
@@ -86,22 +88,22 @@ class HW4TicTacToe {
     void turnAI() {
         int x, y;
         do {
-            x = random.nextInt(3);
-            y = random.nextInt(3);
+            x = random.nextInt(fieldLenght);
+            y = random.nextInt(fieldLenght);
         } while(!isCellValid(x, y));
         table[x][y] = SIGN_O;
     }
 
     boolean isCellValid(int x, int y) {
-        if (x < 0 || y < 0 || x >= 3 || y >= 3) {
+        if (x < 0 || y < 0 || x >= fieldLenght || y >= fieldLenght) {
             return false;
         }
         return table[x][y] == SIGN_EMPTY;
     }
 
     boolean isTableFull() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < fieldLenght; i++) {
+            for (int j = 0; j < fieldLenght; j++) {
                 if (table[i][j] == SIGN_EMPTY) {
                     return false;
                 }
@@ -110,25 +112,25 @@ class HW4TicTacToe {
         return true;
     }
 
-    //Проверить при введении переменных для размера поля и кол-ва фишек в ряд
+    //Не работает если кол-во фишек для победы меньше размера поля
     boolean checkWin(char ch) {
         int diag = 0, diagRev = 0;
         //Проверка диагоналей.
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < fieldLenght; i++) {
             if (table[i][i] == ch) {
                 diag = diag + 1;
             }
-            if ( table[i][2 - i] == ch) {
+            if ( table[i][fieldLenght - 1 - i] == ch) {
                 diagRev = diagRev + 1;
             }
         }
-        if (diag == 3 || diagRev == 3) {
+        if (diag == signForWin || diagRev == signForWin) {
             return true;
         }
         //Проверка горизонталь и вертикаль
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < fieldLenght; i++) {
             int y = 0, x = 0;
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < fieldLenght; j++) {
                 if (table[i][j] == ch) {
                     y = y + 1;
                 }
@@ -136,7 +138,7 @@ class HW4TicTacToe {
                     x = x + 1;
                 }
             }
-            if (y == 3 || x == 3) {
+            if (y == signForWin || x == signForWin) {
                 return true;
             }
         }
