@@ -14,7 +14,7 @@ class HW4TicTacToe {
     Random random;
     Scanner scanner;
     int fieldLenght = 5;
-    int signForWin = 4;
+    int signForWin = 5;
 
     public static void main(String[] args) {
         new HW4TicTacToe() .game();
