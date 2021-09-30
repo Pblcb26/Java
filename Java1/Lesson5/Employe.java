@@ -53,19 +53,19 @@ class Employe {
         this.phone = phone;
     }
 
-    public Integer getSalary() {
+    public int getSalary() {
     return salary;
     }
 
-    public void setSalary(Integer salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
-    public Integer getAge() {
+    public int getAge() {
     return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 }
