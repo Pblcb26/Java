@@ -9,13 +9,15 @@ class HomeWork6 {
     public static void main(String[] args) {
         int cats = 0;
         int dogs = 0;
+        int frogs =0;
         
         Animal[] animals = {
         new Cat("Mister Kusaka", 10, 150, 0, 200),
         new Dog("Bobick", 7, 600, 10, 500),
         new Cat("Missis Moska", 0, 210, 0, 200),
         new Dog("Sharick", 15, 700, 10, 50),
-        new Cat("KuseMos", -1, 0, 0, 200)
+        new Cat("KuseMos", -1, 0, 0, 200),
+        new Frog("Kvaksha", 50, 20, 100, 50)
         };
 
         System.out.println();
@@ -27,11 +29,14 @@ class HomeWork6 {
             if (animal instanceof Dog) {
                 dogs += 1;
             }
+            if (animal instanceof Frog) {
+                frogs += 1;
+            }
             animal.swim();
             animal.run();
             System.out.println(animal);
         }
 
-        System.out.println("Animals in total " + animals.length + ". " + cats + " cats and " + dogs + " dogs.");
+        System.out.println("Animals in total " + animals.length + ". " + cats + " cats and " + dogs + " dogs and "+ frogs + " frogs");
     }
 }

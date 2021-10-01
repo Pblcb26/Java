@@ -6,7 +6,7 @@ class Cat extends Animal{
 
     @Override
     public void run() {
-        wasRun = (runDistance > maxRun)? "then ran 200 meters and fell asleep." : "ran " + runDistance + " meters.";   
+        wasRun = (runDistance > maxRun)? "then ran " + maxRun + " meters and fell asleep." : "ran " + runDistance + " meters.";   
     }
 
     @Override

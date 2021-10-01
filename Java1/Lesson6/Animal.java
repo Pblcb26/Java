@@ -23,6 +23,16 @@ abstract class Animal implements AnimalInt{
     public String getClassName() {//Получение имени класса
         return className;
     }
+
+    @Override
+    public void run() {
+        wasRun = (runDistance > maxRun)? "can`t run " + maxRun + " meters." : "and ran " + runDistance + " meters.";
+    }
+
+    @Override
+     public void swim() {
+        wasSwim = (swimingDistance > maxSwim)? "can`t swim " + swimingDistance + " meters." : "swam " + swimingDistance + " meters";
+    }
     
     /*public int getCountOfAnimals() {//Счетчик животных из статик значения
         return countOfAnimals;

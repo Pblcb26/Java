@@ -6,11 +6,11 @@ class Dog extends Animal{
 
     @Override
     public void run() {
-        wasRun = (runDistance > maxRun)? "then ran 500 meters and fell to the ground." : "ran " + runDistance + " meters.";
+        wasRun = (runDistance > maxRun)? "then ran " + maxRun + " meters and fell to the ground." : "ran " + runDistance + " meters.";
     }
 
     @Override
      public void swim() {
-        wasSwim = (swimingDistance > maxSwim)? "swam 10 meters and sadly looked at cats" : "swam " + swimingDistance + " meters and";
+        wasSwim = (swimingDistance > maxSwim)? "swam " + maxSwim + " meters and sadly looked at cats" : "swam " + swimingDistance + " meters";
     }
 }
