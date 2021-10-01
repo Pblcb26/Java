@@ -8,19 +8,11 @@ class Cat extends Animal{
 
     @Override
     public void run() {
-        if (runDistance > maxRun) {
-            wasRun = "then ran 200 meters and fell asleep.";
-        } else {
-            wasRun = "ran " + runDistance + " meters.";   
-        }
+        wasRun = (runDistance > maxRun)? "then ran 200 meters and fell asleep." : "ran " + runDistance + " meters.";   
     }
 
     @Override
      public void swim() {
-        if (swimingDistance != maxSwim) {
-            wasSwim = "scratch you then";
-        } else { 
-            this.wasSwim = "looks with curiosity at the floating dogs";
-        }
+        wasSwim = (swimingDistance != maxSwim)? "scratch you then" : "looks with curiosity at the floating dogs";
     }
 }
