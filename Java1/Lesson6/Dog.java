@@ -1,9 +1,7 @@
 class Dog extends Animal{
-    private int maxRun = 500;
-    private int maxSwim = 10;
 
-    Dog(String name, int swimingDistance, int runDistance) {
-        super(name, swimingDistance, runDistance);
+    Dog(String name, int swimingDistance, int runDistance, int maxSwim, int maxRun) {
+        super(name, swimingDistance, runDistance, maxSwim, maxRun);
     }
 
     @Override

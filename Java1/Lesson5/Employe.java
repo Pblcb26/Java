@@ -20,52 +20,16 @@ class Employe {
         return name + ", " + position + ", " + email + ", " + phone + ", " + salary + ", " + age;
     }
 
-    public String getName() {
+    /*public String getName() {
         return name;
     }
 
     public void setName(String name) {
         //if (name != null) {} контроль
         this.name = name;
-    }
-
-    public String getPosition() {
-    return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public String getEmail() {
-    return email;
-    }
-
-    public void setEmale(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
-    return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public int getSalary() {
-    return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
+    }*/
 
     public int getAge() {
     return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 }

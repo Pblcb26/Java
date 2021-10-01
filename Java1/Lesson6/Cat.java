@@ -1,9 +1,7 @@
 class Cat extends Animal{
-    private int maxRun = 200;
-    private int maxSwim = 0;
     
-    Cat(String name, int swimingDistance, int runDistance) {
-        super(name, swimingDistance, runDistance);
+    Cat(String name, int swimingDistance, int runDistance, int maxSwim, int maxRun) {
+        super(name, swimingDistance, runDistance, maxSwim, maxRun);
     }
 
     @Override
@@ -13,6 +11,6 @@ class Cat extends Animal{
 
     @Override
      public void swim() {
-        wasSwim = (swimingDistance != maxSwim)? "scratch you then" : "looks with curiosity at the floating dogs";
+        wasSwim = (swimingDistance != maxSwim)? "scratched you then" : "looks with curiosity at the floating dogs";
     }
 }

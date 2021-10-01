@@ -11,11 +11,11 @@ class HomeWork6 {
         int dogs = 0;
         
         Animal[] animals = {
-        new Cat("Mister Kusaka", 10, 150),
-        new Dog("Bobick", 7, 600),
-        new Cat("Missis Moska", 0, 210),
-        new Dog("Sharick", 15, 700),
-        new Cat("KuseMos", -1, 0)
+        new Cat("Mister Kusaka", 10, 150, 0, 200),
+        new Dog("Bobick", 7, 600, 10, 500),
+        new Cat("Missis Moska", 0, 210, 0, 200),
+        new Dog("Sharick", 15, 700, 10, 50),
+        new Cat("KuseMos", -1, 0, 0, 200)
         };
 
         System.out.println();
