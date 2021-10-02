@@ -1,16 +1,26 @@
 public class Plate {
     private int food;
 
-    Plate(int food) {
+    public Plate(int food) {
         this.food = food;
     }
 
-    void decreaseFood(int food) {
+    
+    public int getFood() {
+        return food;
+    }
+
+    public void decreaseFood(int food) {
         this.food -= food;
+    }
+
+    public void fillThePlate () {
+        this.food = 40;
+        System.out.println("Тарелка наполнена. В ней снова " + food + " кусочков мяса.");
     }
 
     @Override
     public String toString() {
-        return "Plate: " + food;
+        return "В тарелке " + food + " кусочков мяса.";
     }
 }
