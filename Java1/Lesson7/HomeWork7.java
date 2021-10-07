@@ -13,7 +13,7 @@ class HomeWork7 {
 
         Cat[] cats = {
             new Cat("Мистер Кусака", 10, 20, false),
-            new Cat("Элис", 9, 0, false),
+            new Cat("Элис", 9, -5, false),
             new Cat("Миссиc Моська", 15, 32, false),
             new Cat("Клаус", 7, 7, false),
             new Cat("Ниса", 15, 20, false),

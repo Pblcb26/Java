@@ -1,9 +1,9 @@
 public class Cat {
     private String name;
-    private int appetite;
-    private int gluttony;
-    private int isSatiety;
-    private boolean satiety;
+    private int appetite; //съедает за раз
+    private int gluttony; //прожорливость - сколько съест для насыщения
+    //private int isSatiety; //счетчик съеденного
+    private boolean satiety; //сытый или голодный
 
     Cat(String name, int appetite, int gluttony, boolean satiety) { 
         this.name = name;
@@ -25,20 +25,26 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
-        setSatiety();
-        if (gluttony > 0 && appetite <= plate.getFood()) {
+        setSatiety();  //при прожорливости <= 0, кот сытый и не должен есть
+        if (gluttony > 0 && appetite <= plate.getFood()) { //кот не ест, если в миске меньше, чем он съедает за раз
         plate.decreaseFood(appetite);
-        isSatiety = isSatiety + appetite;
+        //isSatiety = isSatiety + appetite;
+        gluttony -= appetite;
         setSatiety();
         }
     }
 
     public void setSatiety() {
-        satiety = (isSatiety >= gluttony)? true : false;
+        //satiety = (isSatiety >= gluttony)? true : false;
+        if (gluttony < 0) {
+            gluttony = 0;
+        } 
+        satiety = (gluttony == 0)? true : false;
     }
 
     @Override
     public String toString() {
-        return name + " за один заход съедает " + appetite + " кусочков мяса, чтоб наесться надо " + gluttony + ". Съедено " + isSatiety + " кусочков. Животик полон: " + satiety;
+        //return name + " за один заход съедает " + appetite + " кусочков мяса, чтоб наесться надо " + gluttony + ". Съедено " + isSatiety + " кусочков. Животик полон: " + satiety;
+        return name + " съедает " + appetite + " кусочков мяса, чтобы наполнить животик надо еще " + gluttony + " кусочков. Животик полон: " + satiety;
     }
 }
