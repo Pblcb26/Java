@@ -8,9 +8,9 @@ class HomeWork3 {
     
     public static void main(String[] args) {
 
-        Box<Apple> box1 = new Box();
-        Box<Apple> box2 = new Box();
-        Box<Orange> box3 = new Box();
+        Box<Apple> box1 = new Box<>();
+        Box<Apple> box2 = new Box<>();
+        Box<Orange> box3 = new Box<>();
 
         Apple apple1 = new Apple();
         Apple apple2 = new Apple();
@@ -39,7 +39,8 @@ class HomeWork3 {
 
         box2.fromBoxtoBox(box1);
         System.out.println("In the box2: " + box2.boxInfo());
-        //System.out.println("In the box1: " + box1.boxInfo());
+        System.out.println(box2.boxes);
+        System.out.println(box1.boxes);
 
         //box2.fromBoxtoBox(box3); //метод не позволяет использовать ящики с другими фруктами.
         
