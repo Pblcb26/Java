@@ -1,5 +1,5 @@
 /**
- * JavaCore. Homework. Lesson 3.
+ * JavaCore. Homework. Lesson 4.
  * @author Afanasyeva MS
  * @version 18.11.2021
  */
