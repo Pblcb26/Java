@@ -9,15 +9,19 @@ public class Box<T extends Fruit>{
     }
 
     public double getWeightOfBox() {
-        return boxes.get(0).getWeight() * boxes.size();
+        if (boxes.isEmpty()) {
+            return 0;
+        } else {
+            return boxes.get(0).getWeight() * boxes.size();
+        }
     }
 
     public void addFruitsToBox(T t) {
         boxes.add(t);
     }
 
-    public void fromBoxtoBox(Box<T> box) {
-        this.boxes.addAll(box.boxes);
+    public void fromBoxToBox(Box<T> box) {
+        boxes.addAll(box.boxes);
         box.boxes.clear();
     }
 

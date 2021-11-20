@@ -14,8 +14,22 @@ class HomeWork4 {
 
         HashMap<String, Integer> equalsCatNames = new HashMap<>();
 
-        for (String catName : catNames) {
+        /*for (String catName : catNames) {
             equalsCatNames.put(catName, equalsCatNames.getOrDefault(catName, 0) + 1);
+        }*/
+
+        /* Разбор ДЗ
+        for (String catName : catNames) {
+            if (equalsCatNames.get(catName) == null) {
+            equalsCatNames.put(catName, 1);
+            } else {
+                equalsCatNames.put(catName, equalsCatNames.get(catName) + 1);
+            }
+        }*/
+
+        //Разбор ДЗ2
+        for (String catName : catNames) {
+            equalsCatNames.merge(catName, 1, Integer::sum);
         }
 
         System.out.println("Уникальные имена:");

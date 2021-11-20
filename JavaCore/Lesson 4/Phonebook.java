@@ -25,6 +25,10 @@ public class Phonebook {
             System.out.println(phonebook.get(surname));
         }
     }
+    /*разбор ДЗ
+    public ArrayList<String> get(String surname) {
+        return phonebook.get(surname);
+    }*/
 
     public void info() {
         System.out.println(phonebook);
