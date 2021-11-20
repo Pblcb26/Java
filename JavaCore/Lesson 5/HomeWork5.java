@@ -20,12 +20,10 @@ class HomeWork5 {
         AppData appData2 = new AppData(header2, data2, file);
 
 
-        appData.save(); //при выводе метода данные полностью перезаписываются
+        appData.save(); //при вызове метода данные полностью перезаписываются
         appData.read();
 
-        appData2.save(); //при выводе метода данные полностью перезаписываются
+        appData2.save(); //при вызове метода данные полностью перезаписываются
         appData2.read();
-
-        //appData.outputAppData();
     }
 }
