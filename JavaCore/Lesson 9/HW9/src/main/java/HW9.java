@@ -1,6 +1,5 @@
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * JavaCore. Homework. Lesson 9.
@@ -51,23 +50,11 @@ public class HW9 {
                 .collect(Collectors.toList());
         System.out.println(mostCurious);
 
-
-        studentCourses("Художественного царапания")
-        static void studentsOnCourse(String course) {
-            String course = new String();
-            students.stream()
-                    .anyMatch((Student e1) -> e1.getAllCourses() == course);
-            System.out.println(Student.getName());
-        }
-
-
-
-
-
-
-
-
-
-
+        String course = "Мурчания";
+        String studentStream = students.stream()
+                .filter((Student e1) -> e1.getAllCourses().contains(course))
+                .map((Student e1) -> e1.getName())
+                .collect(Collectors.joining(", ", "На курсе " + course + " обучаются: ", "."));
+        System.out.println(studentStream);
     }
 }
